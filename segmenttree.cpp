@@ -7,6 +7,7 @@ T (*func)(T, T): function that returns parent's value based on two leafs. Functi
 T identity: identity given function 'func' (0 for sum, +inf for min, -inf for max)
 Remember to initialize all leafs using initialize_leaf function and when finished call build.
 First leaf is at t[n]
+Quering interval at [0, x) for any negative x returns identity so we do not need special cases.
 */
 template <class T>
 class SegmentTree
@@ -21,6 +22,10 @@ public:
 
 	~SegmentTree() {
 		delete[] t;
+	}
+
+	__inline T get_leaf(int index) const {
+		return t[n + index];
 	}
 
 	__inline void initialize_leaf(int index, T value) {
@@ -38,7 +43,7 @@ public:
 		}
 	}
 
-	T query_interval(int l, int r) {  // query on interval [l, r) FINE
+	T query_interval(int l, int r) {  // query on interval [l, r); returns identity for (0, -x)
 		T res = identity; // ?
 		for (l += n, r += n; l < r; l >>= 1, r >>= 1) {
 			if (l & 1) res = function(res, t[l++]);
@@ -73,7 +78,7 @@ public:
 	}
 
 private:
-	int* t;
+	T* t;
 	int n;
 	T identity;
 
