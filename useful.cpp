@@ -15,6 +15,9 @@ public:
 ios_base::sync_with_stdio(false);
 
 // prints double with 9 digit after comma precision
+// it's important to print it this way when dealing with double
+// as normal cout happens to print << "1e9" notation
+// keep in mind to turn on synchronization between cout and printf using ios_base::sync_with_stdio(true);
 printf("%.9f", variable);
 
 /* BINARY SEARCH */

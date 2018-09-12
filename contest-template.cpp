@@ -12,7 +12,7 @@
 //#include <bits/stdc++.h> // contains all headers instead (only on g++)
 
 #define REP(i, n) for((i)=0; (i)<(int)(n); (i)++)
-#define foreach(c, itr) for(__typeof((c).begin()) itr=(c).begin(); itr!=(c).end(); itr++)
+#define foreach(c, itr) for(__typeof((c).begin()) itr = (c).begin(); itr != (c).end(); itr++)
 
 using namespace std;
 
