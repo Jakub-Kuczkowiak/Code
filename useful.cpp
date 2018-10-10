@@ -58,7 +58,7 @@ long long binary_answer(long long l, long long r, bool (*solve)(long long)) {
 }
 
 // case: yes, yes, yes, no, no, no; finds the last 'yes'
-long long binary_answer2(long long l, long long r, bool(*solve)(long long)) {
+long long binary_answer2(long long l, long long r, bool (*solve)(long long)) {
 	if (l > r) return -1; // base case; no found element
 
 	long long m = l + (r - l) / 2;
@@ -78,7 +78,7 @@ long long binary_answer2(long long l, long long r, bool(*solve)(long long)) {
 }
 
 // binary search for double answer 
-double binary_answer(double low, double high, int iterations) {
+double binary_answer(double low, double high, int iterations, bool (*solve)(double)) {
 	for (int i = 0; i < iterations; i++) {
 		double mid = (high + low) / 2.0;
 		if (solve(mid)) high = mid; else low = mid;
@@ -97,7 +97,7 @@ A * B / C = exp( log(A) + log(B) - log(C) )
 // Difference between declaration and object created
 class Compare {
 public:
-    bool operator() (T a , T b) {
+    bool operator() (T a , T b) const {
         return true;
     }
 }compare;
