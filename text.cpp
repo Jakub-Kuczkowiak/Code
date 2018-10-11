@@ -1,3 +1,6 @@
+// Description of how it works:
+// http://www.inf.fh-flensburg.de/lang/algorithmen/pattern/kmpen.htm
+
 #include <vector>
 #include <string>
 
@@ -17,7 +20,7 @@ vector<int> kmpPreprocess(string p)
 		i++; j++;
 		b[i] = j;
 	}
-    
+
 	return b;
 }
 
