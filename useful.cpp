@@ -1,3 +1,7 @@
+/* INCLUDES */
+// includes all essential libraries
+#include <bits/stdc++.h>
+
 /* HASHING */
 // Probably should be something different than xor
 
@@ -104,3 +108,12 @@ public:
 
 priority_queue<T, vector<T>, Compare> pq;
 sort(v.begin(), v.end(), compare);
+
+
+/* PERMUTATION */
+vector<int> myints = {1,2,3};
+std::sort(myints.begin(), myints.end()); // required if you want them in lexicographical order from first to last
+
+do {
+	std::cout << myints[0] << ' ' << myints[1] << ' ' << myints[2] << '\n';
+} while(std::next_permutation(myints.begin(), myints.end()));
