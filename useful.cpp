@@ -117,3 +117,61 @@ std::sort(myints.begin(), myints.end()); // required if you want them in lexicog
 do {
 	std::cout << myints[0] << ' ' << myints[1] << ' ' << myints[2] << '\n';
 } while(std::next_permutation(myints.begin(), myints.end()));
+
+/*
+To generate all subsets of size <= 64 we can use 
+long long subset = 0...LL_MAX
+
+Now to get next subset we just do:
+subset++;
+
+In order to find out if i-th element belongs to current subset we just check if i-th bit is set in variable subset.
+*/
+
+
+/* TEXT 
+To find pattern in O(n) time we can in fact use .find method of string class
+
+std::string str ("There are two needles in this haystack with needles.");
+  std::string str2 ("needle");
+
+  // different member versions of find in the same order as above:
+  std::size_t found = str.find(str2);
+  if (found!=std::string::npos)
+    std::cout << "first 'needle' found at: " << found << '\n';
+
+  found=str.find("needles are small",found+1,6);
+  if (found!=std::string::npos)
+    std::cout << "second 'needle' found at: " << found << '\n';
+
+  found=str.find("haystack");
+  if (found!=std::string::npos)
+    std::cout << "'haystack' also found at: " << found << '\n';
+
+  found=str.find('.');
+  if (found!=std::string::npos)
+    std::cout << "Period found at: " << found << '\n';
+
+  // let's replace the first needle:
+  str.replace(str.find(str2),str2.length(),"preposition");
+  std::cout << str << '\n';
+
+*/
+
+/* TEXT */
+// String concatenation is quite fast in c++, however we might as well use 
+std::stringstream ss;
+ss << "Hello world, " << 42 << "nice to see you.";
+std::string s = ss.str();
+
+// It can be a case, similarly like with vector, that the space is doubled evety time it needs to do some resizing.
+
+// Declare string of n characters
+std::string s(5, 'a'); // s == "aaaaa"
+
+// convert string line with objects into variables
+string s = "1 30 55";
+stringstream ss(s);
+
+int a, b, c;
+ss >> a >> b >> c;

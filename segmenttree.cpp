@@ -1,3 +1,5 @@
+/*https://cp-algorithms.com/data_structures/segment_tree.html  - intresting tutorial! */
+
 /* https://codeforces.com/blog/entry/18051 */
 
 /*
