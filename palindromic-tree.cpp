@@ -1,4 +1,4 @@
-// C++ program to demonstrate working of 
+ // C++ program to demonstrate working of 
 // palindromic tree 
 #include <iostream>
 #include <string>
